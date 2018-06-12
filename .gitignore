@@ -51,7 +51,7 @@ system("cls");
 		printf("Digite o ra do aluno\n");
 		scanf("%d",&ra[f]);
 		for (n=1;n<=10 ;n++){
-			printf("Digite a nota %d  do aluno \n",n);
+			printf("Digite a nota %d  do aluno %d \n",n,ra[f]);
 			scanf("%d",&ra_nota[f][n]);
 }
 system("cls");
@@ -96,6 +96,3 @@ for (f=1;f<=quant_aluno;f++){
 }
 }
 }
-
-
-
