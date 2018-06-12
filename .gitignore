@@ -1,32 +1,101 @@
-# Prerequisites
-*.d
+#include <stdlib.h>
+#include <stdio.h>
+#include <locale>
+int n,ra_nota[70][10],ra[70],quant_aluno,f,a,c,funcao,excluir,alterar;
+char escolha;
+void media ();
+void visualizar();
+void excluir_nota();
+void mudar();
+void incluir();
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main(){
+	setlocale(LC_ALL,"PORTUGUESE");
+	printf("Escolha uma das opções abaixo:\n1-Visualizar\n2-Exluir\n3-Alterar nota\n4-Incluir aluno\n");
+	scanf("%d",&funcao);
+	do {
+	
+	switch (funcao){
+		case 1:
+			visualizar();
+			break;
+		case 2: 
+			void excluir_nota();
+			break;
+		case 3:
+			mudar();
+			break;
+		case 4:
+			incluir();
+			break;	
+		default :
+			printf("Nenhuma opção valida");
+			break;
+	}
+	system("cls");
+	printf("Escolha uma das opções abaixo:\n1-Visualizar\n2-Exluir\n3-Alterar nota\n4-Incluir aluno\nx-Sair\n");
+	scanf("%c",&escolha);
+}while(escolha!='x');
 
-# Precompiled Headers
-*.gch
-*.pch
+system("pause");
+return 0;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Fortran module files
-*.mod
-*.smod
+}
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+void incluir () {//inserir novos alunos
+printf ("Digite a quantidade de alunos que deseja inserir\n");
+scanf("%d",&quant_aluno);
+system("cls");
+	for (f=1;f<=quant_aluno;f++){
+		printf("Digite o ra do aluno\n");
+		scanf("%d",&ra[f]);
+		for (n=1;n<=10 ;n++){
+			printf("Digite a nota %d  do aluno \n",n);
+			scanf("%d",&ra_nota[f][n]);
+}
+system("cls");
+}
 
-# Executables
-*.exe
-*.out
-*.app
+}
+
+void visualizar(){//mostrar os "ras" e notas digitadas
+for (f=1;f<=quant_aluno;f++){
+		for (n=1;n<=10 ;n++){
+			printf("Nota %d do aluno %d:%d \n",n,ra[f],ra_nota[f][n]);
+}
+printf("\n");
+}
+}
+void excluir_nota(){//excluir nota do aluno
+printf ("Digite o ra do aluno");
+scanf("%d",&excluir);
+for (f=1;f<=quant_aluno;f++){
+	if (excluir==ra[f]){
+	for (n=1;n<=10 ;n++){
+	ra_nota[excluir][n]=0;
+}
+}
+}
+for (f=1;f<=quant_aluno;f++){
+		for (n=1;n<=10 ;n++){
+			printf("Nota %d do aluno %d:%d \n",n,ra[f],ra_nota[f][n]);
+}
+printf("\n");
+}
+}
+void mudar (){//alterar nota de 1 aluno
+printf ("Digite o ra do aluno\n");
+scanf("%d",&alterar);
+for (f=1;f<=quant_aluno;f++){
+	if (alterar==ra[f]){
+		for (n=1;n<=10 ;n++){
+			printf("Digite a nova  nota %d  do aluno \n",n);
+			scanf("%d",&ra_nota[f][n]);
+}
+}
+}
+}
+
+
+
